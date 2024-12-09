@@ -1,0 +1,25 @@
+{
+    "name": "keyriz/blog-featured-post",
+    "description": "Percobaan membuat module",
+    "keywords": [
+        "silverstripe",
+        "blog",
+        "news"
+    ],
+    "type": "silverstripe-module",
+    "require": {
+        "silverstripe/cms": "^3.2.0",
+        "silverstripe/lumberjack": "~1.1",
+        "silverstripe/tagfield": "^1.0"
+    },
+    "extra": {
+        "installer-name": "blog-featured-post"
+    },
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Rizky Ramadhan",
+            "email": "mo.rizrama@gmail.com"
+        }
+    ]
+}
