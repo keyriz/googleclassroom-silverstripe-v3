@@ -24,4 +24,11 @@ class ArticleCategory extends DataObject
             TextField::create('Title')
         );
     }
+
+    public function Link()
+    {
+        return $this->ArticleHolder()->Link(
+            'category/' . $this->ID
+        );
+    }
 }
