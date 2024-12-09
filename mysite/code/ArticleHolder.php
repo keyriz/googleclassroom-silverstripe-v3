@@ -86,6 +86,26 @@ class ArticleHolder_Controller extends Page_Controller
         ))->sort('Date DESC');
     }
 
+    public function index(SS_HTTPRequest $request)
+    {
+        $articles = Property::get();
+
+        $paginatedArticles = PaginatedList::create(
+            $articles,
+            $request
+        )->setPageLength(15)
+            ->setPaginationGetVar('s');
+
+        $data = array('Results' => $paginatedArticles);
+
+        if ($request->isAjax()) {
+            return $this->customise($data)
+                ->renderWith('ArticleSearchResults');
+        }
+
+        return $data;
+    }
+
     public function category(SS_HTTPRequest $r)
     {
         $category = ArticleCategory::get()->byID(
